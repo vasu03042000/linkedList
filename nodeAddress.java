@@ -37,6 +37,26 @@ public class nodeAddress {
             currNode = currNode.next;
         }
     }
+    static void delete(int d){
+    Node nextNode = llist.head.next;
+    Node currNode = llist.head;
+    Node prevNode = null;
+    while (currNode.next != null){
+        if(currNode.data == d){
+            if (currNode == llist.head){
+                llist.head = llist.head.next;
+                llist.head.prev = null ;
+            }
+            else {
+                prevNode.next = nextNode;
+                nextNode.prev = prevNode;
+            }
+        }
+        prevNode = currNode;
+        currNode = nextNode;
+        nextNode = nextNode.next;
+    }
+}
 
     public static void main(String[] args) {
         insert(4);
@@ -44,6 +64,7 @@ public class nodeAddress {
         insert(6);
         insert(7);
         insert(8);
+        delete(8);
 
         print();
     }
