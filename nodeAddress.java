@@ -64,8 +64,9 @@ public class nodeAddress {
         insert(6);
         insert(7);
         insert(8);
+        insert(10);
         delete(8);
-
+// this is just a trial
         print();
     }
 
